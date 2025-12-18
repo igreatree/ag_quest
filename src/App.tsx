@@ -1,21 +1,20 @@
-import { useState } from "react";
 import { WelcomeStep } from "./components/WelcomeStep";
-import { Button, Stack, Stepper } from "@mantine/core";
-import { DescriptionStep } from "./components/DescriptionStep";
+import { Stack, Stepper } from "@mantine/core";
+import { SumQuest } from "./components/SumQuest";
+import { TaskWrapper } from "./components/TaskWrapper";
+import { useAppStore } from "./store";
+import { MultiplyQuest } from "./components/MultiplyQuest";
 
 function App() {
-  const [started, setStarted] = useState(false);
-  const [active, setActive] = useState(0);
-  const nextStep = () =>
-    setActive((current) => (current < 3 ? current + 1 : current));
+  const { started, setStarted, step } = useAppStore();
 
   if (!started) return <WelcomeStep onStart={() => setStarted(true)} />;
+
   return (
     <Stack w="100vw" h="100vh" p="xl" align="center">
       <Stepper
         w="100%"
-        active={active}
-        onStepClick={setActive}
+        active={step}
         color="teal"
         styles={{
           root: {
@@ -26,10 +25,6 @@ function App() {
 
           content: {
             height: "100%",
-          },
-
-          stepBody: {
-            flex: 1,
           },
 
           step: {
@@ -48,14 +43,19 @@ function App() {
         }}
       >
         <Stepper.Step>
-          <DescriptionStep />
+          <TaskWrapper description="You'll have to complete several tasks, some of which will have a time limit. You only have 10 attempts, after which you'll start over. If you complete all the tasks, you're super cool 😎" />
         </Stepper.Step>
-        <Stepper.Step>step2</Stepper.Step>
-        <Stepper.Step>step3</Stepper.Step>
+        <Stepper.Step>
+          <TaskWrapper description="Addition and Subtraction. You will need to count 10 expressions in 40 seconds. Good luck!">
+            <SumQuest />
+          </TaskWrapper>
+        </Stepper.Step>
+        <Stepper.Step>
+          <TaskWrapper description="Multiplication and Division. You will need to count 10 expressions in 50 seconds. Good luck!">
+            <MultiplyQuest />
+          </TaskWrapper>
+        </Stepper.Step>
       </Stepper>
-      <Button size="lg" color="teal" onClick={nextStep}>
-        Next step
-      </Button>
     </Stack>
   );
 }

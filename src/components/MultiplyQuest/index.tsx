@@ -5,29 +5,27 @@ import { NextButton } from "../NextButton";
 import Counter from "../Counter";
 import { useAppStore } from "../../store";
 import classNames from "classnames";
-import styles from "./sumQuest.module.scss";
+import styles from "./multiplyQuest.module.scss";
 
 // const successCount = 10;
 const successCount = 1;
-const timer = 40;
+const timer = 50;
 // const timer = 1;
 
 const generateExpression = () => {
-  const operator = ["+", "-"][Math.floor(Math.random() * 2)];
-  const a = Math.floor(Math.random() * 99);
-  const b = Math.floor(Math.random() * 99);
-  if (operator === "-") {
-    if (a >= b) {
-      return { epxpression: `${a} - ${b} = ?`, answer: a - b };
-    } else {
-      return { epxpression: `${b} - ${a} = ?`, answer: b - a };
-    }
+  const operator = ["*", "/"][Math.floor(Math.random() * 2)];
+
+  const a = Math.floor(Math.random() * 20) + 1;
+  if (operator === "/") {
+    const b = Math.floor(Math.random() * 10) + 1;
+    return { epxpression: `${a * b} / ${b} = ?`, answer: a };
   } else {
-    return { epxpression: `${a} + ${b} = ?`, answer: a + b };
+    const b = Math.floor(Math.random() * 20) + 1;
+    return { epxpression: `${a} * ${b} = ?`, answer: a * b };
   }
 };
 
-export const SumQuest = () => {
+export const MultiplyQuest = () => {
   const { attemps, setAttemps, status, setStatus } = useAppStore();
   const [timerValue, setTimerValue] = useState(timer);
   const [inputValue, setInputValue] = useState<number | string>("");
