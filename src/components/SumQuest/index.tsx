@@ -7,8 +7,8 @@ import { useAppStore } from "../../store";
 import classNames from "classnames";
 import styles from "./sumQuest.module.scss";
 
-// const successCount = 10;
-const successCount = 1;
+const successCount = 10;
+// const successCount = 1;
 const timer = 40;
 // const timer = 1;
 

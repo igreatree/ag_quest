@@ -8,8 +8,14 @@ export const theme = createTheme({
   components: {
     NumberInput: NumberInput.extend({
       styles: {
-        input: { backgroundColor: "black", color: "white", border: "none" },
+        input: {
+          width: 166,
+          backgroundColor: "black",
+          color: "white",
+          border: "none",
+        },
       },
+      classNames: { input: "input" },
       defaultProps: {
         radius: "md",
       },

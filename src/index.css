@@ -16,3 +16,7 @@ body {
   height: 100vh;
   background-color: #171717;
 }
+
+.input::placeholder {
+  transition: color 0.2s ease-in-out;
+}

@@ -16,30 +16,14 @@ export const TaskWrapper = ({
   description,
   children,
 }: TaskWrapperPropsType) => {
-  const { attemps, setAttemps, setStep, status, setStatus } = useAppStore();
+  const { step, attemps, setAttemps, setStep, status, setStatus } =
+    useAppStore();
   const [started, setStarted] = useState(false);
 
   useEffect(() => {
+    setStatus("started");
     setStarted(false);
-  }, [description]);
-
-  if (attemps === 0 && status === "failed")
-    return (
-      <Stack h="100%" justify="center" align="center">
-        <Title c="white">Game over!</Title>
-        <Button
-          color="teal"
-          size="lg"
-          onClick={() => {
-            setAttemps(10);
-            setStep(0);
-            setStatus("started");
-          }}
-        >
-          Restart
-        </Button>
-      </Stack>
-    );
+  }, [step]);
 
   if (!started)
     return (
@@ -62,6 +46,24 @@ export const TaskWrapper = ({
           )}
           {!children && <NextButton />}
         </Group>
+      </Stack>
+    );
+
+  if (attemps === 0 && status === "failed")
+    return (
+      <Stack h="100%" justify="center" align="center">
+        <Title c="white">Game over!</Title>
+        <Button
+          color="teal"
+          size="lg"
+          onClick={() => {
+            setAttemps(10);
+            setStep(1);
+            setStatus("started");
+          }}
+        >
+          Restart
+        </Button>
       </Stack>
     );
 

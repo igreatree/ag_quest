@@ -4,6 +4,7 @@ import { SumQuest } from "./components/SumQuest";
 import { TaskWrapper } from "./components/TaskWrapper";
 import { useAppStore } from "./store";
 import { MultiplyQuest } from "./components/MultiplyQuest";
+import { Finish } from "./components/Finish";
 
 function App() {
   const { started, setStarted, step } = useAppStore();
@@ -54,6 +55,9 @@ function App() {
           <TaskWrapper description="Multiplication and Division. You will need to count 10 expressions in 50 seconds. Good luck!">
             <MultiplyQuest />
           </TaskWrapper>
+        </Stepper.Step>
+        <Stepper.Step icon="AG">
+          <Finish />
         </Stepper.Step>
       </Stepper>
     </Stack>
