@@ -20,7 +20,7 @@ function App() {
       audio.current.volume = 0.3;
       audio.current.play();
     }
-  }, [step]);
+  }, [started, step]);
 
   return (
     <>
