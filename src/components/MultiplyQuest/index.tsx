@@ -7,10 +7,8 @@ import { useAppStore } from "../../store";
 import classNames from "classnames";
 import styles from "./multiplyQuest.module.scss";
 
-// const successCount = 10;
-const successCount = 1;
-const timer = 50;
-// const timer = 1;
+const successCount = 10;
+const timer = 45;
 
 const generateExpression = () => {
   const operator = ["*", "/"][Math.floor(Math.random() * 2)];

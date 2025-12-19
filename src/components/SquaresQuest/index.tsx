@@ -16,10 +16,10 @@ type SquarePropsType = {
 const timer = 3;
 const levels = [
   { count: 3, time: 1 },
-  //   { count: 4, time: 1.5 },
-  //   { count: 5, time: 2 },
-  //   { count: 6, time: 2.5 },
-  //   { count: 7, time: 4 },
+  { count: 4, time: 1.5 },
+  { count: 5, time: 2 },
+  { count: 6, time: 2.5 },
+  { count: 7, time: 4 },
 ];
 
 const generateExpression = (level: number) => {
