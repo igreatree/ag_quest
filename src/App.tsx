@@ -67,12 +67,12 @@ function App() {
               <TaskWrapper description="You'll have to complete several tasks, some of which will have a time limit. You only have 10 attempts, after which you'll start over. If you complete all the tasks, you're super cool 😎" />
             </Stepper.Step>
             <Stepper.Step>
-              <TaskWrapper description="Addition and Subtraction: You will need to count 10 expressions in 40 seconds. Good luck!">
+              <TaskWrapper description="Addition and Subtraction: You will need to count 10 expressions in 35 seconds. Good luck!">
                 <SumQuest />
               </TaskWrapper>
             </Stepper.Step>
             <Stepper.Step>
-              <TaskWrapper description="Multiplication and Division: You will need to count 10 expressions in 50 seconds. Good luck!">
+              <TaskWrapper description="Multiplication and Division: You will need to count 10 expressions in 45 seconds. Good luck!">
                 <MultiplyQuest />
               </TaskWrapper>
             </Stepper.Step>
@@ -82,7 +82,7 @@ function App() {
               </TaskWrapper>
             </Stepper.Step>
             <Stepper.Step>
-              <TaskWrapper description="The final task! Hacking :) You must guess or find the password!">
+              <TaskWrapper description="The final task! Hacking :) You must guess or find the password in 1 minute!">
                 <PasswordQuest />
               </TaskWrapper>
             </Stepper.Step>
