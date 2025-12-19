@@ -1,0 +1,29 @@
+.text {
+  color: white;
+  font-size: 30px;
+  max-width: 820px;
+  text-align: center;
+  transition: color 0.2s ease-in-out;
+}
+
+.started {
+  color: white;
+}
+
+.failed {
+  color: #fa5252;
+  input {
+    &::placeholder {
+      color: #fa5252;
+    }
+  }
+}
+
+.success {
+  color: #12b886;
+  input {
+    &::placeholder {
+      color: #12b886;
+    }
+  }
+}

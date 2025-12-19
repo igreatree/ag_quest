@@ -6,6 +6,7 @@ export interface AppStateType {
   step: number;
   attemps: number;
   status: "started" | "failed" | "success";
+  password_quest_HINT: string;
   setStarted: (started: boolean) => void;
   setStep: (step: number) => void;
   setAttemps: (attemps: number) => void;
@@ -19,6 +20,7 @@ export const useAppStore = create<AppStateType>()(
       step: 0,
       attemps: 10,
       status: "started",
+      password_quest_HINT: "3 parts!",
       setStarted: (started) => set((state) => ({ ...state, started })),
       setStep: (step) => set((state) => ({ ...state, step })),
       setAttemps: (attemps) => set((state) => ({ ...state, attemps })),

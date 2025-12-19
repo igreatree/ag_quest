@@ -4,6 +4,9 @@ import App from "./App.tsx";
 import "@mantine/core/styles.css";
 import "./index.css";
 
+window.password2 = "big-";
+document.cookie = "password3=brother->AG";
+
 export const theme = createTheme({
   components: {
     NumberInput: NumberInput.extend({
